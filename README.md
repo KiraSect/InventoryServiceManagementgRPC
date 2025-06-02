@@ -91,3 +91,7 @@ inventory.proto включен в проекте с настройкой:
 Структура данных в файле:
 
 ![image](https://github.com/user-attachments/assets/0a1624c3-7ad1-4d59-ba9a-b52630e6623e)
+
+- **Логирование сервера**: при изменениях продуктов на сервере появляются логи.
+
+![image](https://github.com/user-attachments/assets/739bc91e-066b-484d-88df-d4d89c247e56)
