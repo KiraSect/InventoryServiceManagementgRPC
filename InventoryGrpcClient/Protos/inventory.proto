@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "InventoryService";
+
+package inventory;
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  int32 quantity = 3;
+}
+
+message StockChange {
+  int32 productId = 1;
+  int32 delta = 2;
+  int64 timestamp = 3;
+}
+
+message AddProductRequest {
+  Product product = 1;
+}
+
+message GetProductRequest {
+  int32 id = 1;
+}
+
+message UpdateStockRequest {
+  int32 productId = 1;
+  int32 delta = 2;
+}
+
+message RemoveProductRequest {
+  int32 id = 1;
+}
+
+message ListProductsRequest {}
+
+message ListProductsResponse {
+  repeated Product products = 1;
+}
+
+message StockAlert {
+  Product product = 1;
+  string message = 2;
+}
+
+service InventoryManagement {
+  rpc AddProduct(AddProductRequest) returns (Product);
+  rpc GetProduct(GetProductRequest) returns (Product);
+  rpc UpdateStock(UpdateStockRequest) returns (Product);
+  rpc RemoveProduct(RemoveProductRequest) returns (google.protobuf.Empty);
+  rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
+
+  // Серверный стриминг для оповещений о низком остатке
+  rpc StreamStockAlerts(google.protobuf.Empty) returns (stream StockAlert);
+}
+
+import "google/protobuf/empty.proto";

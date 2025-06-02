@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Name": "precol",
+    "Quantity": 16000
+  },
+  {
+    "Id": 2,
+    "Name": "havchik",
+    "Quantity": 15
+  },
+  {
+    "Id": 4,
+    "Name": "productnum15",
+    "Quantity": 100
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "InventoryGrpcClient": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
